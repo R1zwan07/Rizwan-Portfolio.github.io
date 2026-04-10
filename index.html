@@ -449,12 +449,27 @@
             color: #3b82f6;
         }
 
-        /* Projects grid */
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        /* Projects grid - FULLY RESPONSIVE */
+        .projects-wrapper {
+            display: flex;
+            flex-direction: column;
             gap: 2rem;
-            margin: 2rem 0;
+        }
+
+        .projects-row {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .project-single {
+            display: flex;
+            justify-content: center;
+        }
+        
+        .project-single .project-card {
+            width: 100%;
+            max-width: 550px;
         }
 
         .project-card {
@@ -465,6 +480,7 @@
             transition: all 0.3s;
             display: flex;
             flex-direction: column;
+            height: 100%;
         }
 
         .project-card:hover {
@@ -917,8 +933,14 @@
                 padding: 1.5rem;
             }
             
-            .project-grid {
-                gap: 1rem;
+            /* PROJECTS MOBILE RESPONSIVE - changes to 1 column */
+            .projects-row {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .project-single .project-card {
+                max-width: 100%;
             }
             
             .project-head {
@@ -1036,7 +1058,6 @@
                 
                 <div class="hero-right floating">
                     <div class="profile-pic" id="profilePic" onclick="openModal(this)">
-                        <!-- Replace with your actual image -->
                         <img src="riz.jpeg" alt="Mohammed Rizwan S" id="profileImg">
                     </div>
                     <h3>Mohammed Rizwan S</h3>
@@ -1065,7 +1086,6 @@
         <section id="about">
             <h2 class="section-title"><i class="fas fa-user-graduate"></i> About & Skills</h2>
             <div class="about-grid">
-                <!-- personal info card -->
                 <div class="info-card glow-effect">
                     <h3><i class="fas fa-address-card"></i> Personal Information</h3>
                     <div class="info-item"><i class="fas fa-phone"></i> +91 88674 67848</div>
@@ -1075,7 +1095,6 @@
                     <div class="info-item"><i class="fas fa-tasks"></i> Open to freelance</div>
                 </div>
                 
-                <!-- skills progress card -->
                 <div class="skills-card glow-effect">
                     <h3><i class="fas fa-code"></i> Technical Proficiency</h3>
                     <div class="skill-progress">
@@ -1092,7 +1111,6 @@
                     </div>
                 </div>
                 
-                <!-- Soft skills card -->
                 <div class="softskills-card glow-effect">
                     <h3><i class="fas fa-heart"></i> Soft Skills</h3>
                     <div class="softskill-tags">
@@ -1106,118 +1124,116 @@
             </div>
         </section>
 
-        <!-- PROJECTS section -->
-<section id="projects">
-    <h2 class="section-title"><i class="fas fa-rocket"></i> Projects</h2>
-
-    <!-- First Row: 2 Projects -->
-    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; margin-bottom: 2rem;">
-        <!-- AI Learning Platform -->
-        <div class="project-card glow-effect">
-            <div class="project-head">AI-Based Learning Platform for Rural Education</div>
-            <div class="project-body">
-                <div class="project-description">
-                    <p style="text-align: justify;">Designed and developed an <strong>AI-Based Learning Platform for Rural Student Education using Cloud</strong> to improve access to digital education in underserved communities. The platform features multilingual learning support (Kannada and English), video based lessons, interactive quizzes, and AI-driven personalized learning paths that adapt to student performance. An integrated AI-powered chatbot provides real-time doubt resolution, enhancing student engagement and support.</p>
-                </div>
-                <div>
-                    <span class="tech-badge">Python</span>
-                    <span class="tech-badge">Flask</span>
-                    <span class="tech-badge">MySQL</span>
-                    <span class="tech-badge">AWS</span>
-                    <span class="tech-badge">AI/ML</span>
-                </div>
-            </div>
-            <div class="project-links">
-                <a href="https://github.com/R1zwan07/AI-Based-Learning-Platform-for-Rural-student-Education-Using-Cloud" class="project-link"><i class="fab fa-github"></i> Code</a>
-            </div>
-        </div>
-
-        <!-- DocIntel Study Assistant -->
-        <div class="project-card glow-effect">
-            <div class="project-head">DocIntel Study Assistant</div>
-            <div class="project-body">
-                <div class="project-description">
-                    <p style="text-align: justify;">Developed an <strong>AI Document Intelligence System</strong> that transforms PDFs into structured summaries, key points, and diagram extraction using PyMuPDF. Implemented a RAG-based Q&A system using Ollama LLM for contextual answers, and an NLP scoring algorithm to extract 30–40 high-value key points automatically.</p>
-                </div>
-                <div>
-                    <span class="tech-badge">Python</span>
-                    <span class="tech-badge">NLP</span>
-                    <span class="tech-badge">Ollama</span>
-                    <span class="tech-badge">PyMuPDF</span>
-                </div>
-            </div>
-            <div class="project-links">
-                <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Second Row: 2 Projects -->
-    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; margin-bottom: 2rem;">
-        <!-- Digital Child Growth Passport -->
-        <div class="project-card glow-effect">
-            <div class="project-head">Digital Child Growth Passport</div>
-            <div class="project-body">
-                <div class="project-description">
-                    <p style="text-align: justify;">Designed a <strong>digital health platform</strong> for tracking child growth and vaccination records. The system uses data analytics to monitor growth patterns and generate actionable health insights. It features a user-friendly interface for parents and healthcare providers, enabling better health management for children.</p>
-                </div>
-                <div>
-                    <span class="tech-badge">React</span>
-                    <span class="tech-badge">Node.js</span>
-                    <span class="tech-badge">MongoDB</span>
-                    <span class="tech-badge">Data Analytics</span>
-                </div>
-            </div>
-            <div class="project-links">
-                <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
-            </div>
-        </div>
-
-        <!-- AI-Based Smart Traffic Control System -->
-        <div class="project-card glow-effect">
-            <div class="project-head">AI-Based Smart Traffic Control System</div>
-            <div class="project-body">
-                <div class="project-description">
-                    <p style="text-align: justify;">Built a <strong>real-time traffic management system</strong> using YOLOv8 and DeepSORT with emergency vehicle detection. Capable of processing multiple camera feeds (up to 6 streams) with a FastAPI backend achieving 28–35 FPS. Includes automatic signal prioritization and ETA prediction for VVIP and emergency vehicles.</p>
-                </div>
-                <div>
-                    <span class="tech-badge">Python</span>
-                    <span class="tech-badge">YOLOv8</span>
-                    <span class="tech-badge">DeepSORT</span>
-                    <span class="tech-badge">FastAPI</span>
-                    <span class="tech-badge">AI/ML</span>
-                </div>
-            </div>
-            <div class="project-links">
-                <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Third Row: 1 Project Centered -->
-    <div style="display: flex; justify-content: center;">
-        <div style="width: calc(50% - 1rem); min-width: 300px;">
-            <!-- Personal Expense Tracker -->
-            <div class="project-card glow-effect">
-                <div class="project-head">Personal Expense Tracker</div>
-                <div class="project-body">
-                    <div class="project-description">
-                        <p style="text-align: justify;">Developed a <strong>Personal Expense Tracker</strong> to help users efficiently manage and monitor their daily financial activities. The application allows users to record income and expenses, categorize transactions, and track spending patterns through an interactive dashboard. It provides visual insights into personal financial habits using charts and summaries, helping users make informed budgeting and spending decisions.</p>
+        <!-- PROJECTS section - FULLY RESPONSIVE 2:2:1 layout that stacks on mobile -->
+        <section id="projects">
+            <h2 class="section-title"><i class="fas fa-rocket"></i> Projects</h2>
+            <div class="projects-wrapper">
+                <!-- Row 1: Two projects side by side -->
+                <div class="projects-row">
+                    <!-- AI Learning Platform -->
+                    <div class="project-card glow-effect">
+                        <div class="project-head">AI-Based Learning Platform for Rural Education</div>
+                        <div class="project-body">
+                            <div class="project-description">
+                                <p>Designed and developed an <strong>AI-Based Learning Platform for Rural Student Education using Cloud</strong> to improve access to digital education in underserved communities. The platform features multilingual learning support (Kannada and English), video based lessons, interactive quizzes, and AI-driven personalized learning paths that adapt to student performance. An integrated AI-powered chatbot provides real-time doubt resolution, enhancing student engagement and support.</p>
+                            </div>
+                            <div>
+                                <span class="tech-badge">Python</span>
+                                <span class="tech-badge">Flask</span>
+                                <span class="tech-badge">MySQL</span>
+                                <span class="tech-badge">AWS</span>
+                                <span class="tech-badge">AI/ML</span>
+                            </div>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/R1zwan07/AI-Based-Learning-Platform-for-Rural-student-Education-Using-Cloud" class="project-link"><i class="fab fa-github"></i> Code</a>
+                        </div>
                     </div>
-                    <div>
-                        <span class="tech-badge">Python</span>
-                        <span class="tech-badge">Streamlit</span>
-                        <span class="tech-badge">HTML</span>
-                        <span class="tech-badge">CSS</span>
+
+                    <!-- DocIntel Study Assistant -->
+                    <div class="project-card glow-effect">
+                        <div class="project-head">DocIntel Study Assistant</div>
+                        <div class="project-body">
+                            <div class="project-description">
+                                <p>Developed an <strong>AI Document Intelligence System</strong> that transforms PDFs into structured summaries, key points, and diagram extraction using PyMuPDF. Implemented a RAG-based Q&A system using Ollama LLM for contextual answers, and an NLP scoring algorithm to extract 30–40 high-value key points automatically.</p>
+                            </div>
+                            <div>
+                                <span class="tech-badge">Python</span>
+                                <span class="tech-badge">NLP</span>
+                                <span class="tech-badge">Ollama</span>
+                                <span class="tech-badge">PyMuPDF</span>
+                            </div>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
+                        </div>
                     </div>
                 </div>
-                <div class="project-links">
-                    <a href="https://github.com/R1zwan07/expense-tracker-" class="project-link"><i class="fab fa-github"></i> Code</a>
+
+                <!-- Row 2: Two projects side by side -->
+                <div class="projects-row">
+                    <!-- Digital Child Growth Passport -->
+                    <div class="project-card glow-effect">
+                        <div class="project-head">Digital Child Growth Passport</div>
+                        <div class="project-body">
+                            <div class="project-description">
+                                <p>Designed a <strong>digital health platform</strong> for tracking child growth and vaccination records. The system uses data analytics to monitor growth patterns and generate actionable health insights. It features a user-friendly interface for parents and healthcare providers, enabling better health management for children.</p>
+                            </div>
+                            <div>
+                                <span class="tech-badge">React</span>
+                                <span class="tech-badge">Node.js</span>
+                                <span class="tech-badge">MongoDB</span>
+                                <span class="tech-badge">Data Analytics</span>
+                            </div>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+
+                    <!-- AI-Based Smart Traffic Control System -->
+                    <div class="project-card glow-effect">
+                        <div class="project-head">AI-Based Smart Traffic Control System</div>
+                        <div class="project-body">
+                            <div class="project-description">
+                                <p>Built a <strong>real-time traffic management system</strong> using YOLOv8 and DeepSORT with emergency vehicle detection. Capable of processing multiple camera feeds (up to 6 streams) with a FastAPI backend achieving 28–35 FPS. Includes automatic signal prioritization and ETA prediction for VVIP and emergency vehicles.</p>
+                            </div>
+                            <div>
+                                <span class="tech-badge">Python</span>
+                                <span class="tech-badge">YOLOv8</span>
+                                <span class="tech-badge">DeepSORT</span>
+                                <span class="tech-badge">FastAPI</span>
+                                <span class="tech-badge">AI/ML</span>
+                            </div>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row 3: Single centered project -->
+                <div class="project-single">
+                    <div class="project-card glow-effect">
+                        <div class="project-head">Personal Expense Tracker</div>
+                        <div class="project-body">
+                            <div class="project-description">
+                                <p>Developed a <strong>Personal Expense Tracker</strong> to help users efficiently manage and monitor their daily financial activities. The application allows users to record income and expenses, categorize transactions, and track spending patterns through an interactive dashboard. It provides visual insights into personal financial habits using charts and summaries, helping users make informed budgeting and spending decisions.</p>
+                            </div>
+                            <div>
+                                <span class="tech-badge">Python</span>
+                                <span class="tech-badge">Streamlit</span>
+                                <span class="tech-badge">HTML</span>
+                                <span class="tech-badge">CSS</span>
+                            </div>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/R1zwan07/expense-tracker-" class="project-link"><i class="fab fa-github"></i> Code</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
+        </section>
 
         <!-- EXPERIENCE section -->
         <section id="experience">
@@ -1229,61 +1245,48 @@
                     <div class="date"><i class="far fa-calendar-alt"></i> Feb 2026 - May 2026</div>
                     <ul>
                        <li>Developing AI-based solutions and optimizing algorithms.</li>
-                        <li>Building data science pipelines for preprocessing and model evaluation.</li>
-                        <li>Implementing ML models using Python frameworks.</li>
-                        <li>Built an end-to-end data science pipeline with version control using GitHub.</li>
+                       <li>Building data science pipelines for preprocessing and model evaluation.</li>
+                       <li>Implementing ML models using Python frameworks.</li>
+                       <li>Built an end-to-end data science pipeline with version control using GitHub.</li>
                     </ul>
                 </div>
             </div>
         </section>
 
-        <!-- HIGHLIGHT SECTION - 2x2 layout -->
+        <!-- HIGHLIGHT SECTION -->
         <section id="highlights">
             <h2 class="section-title"><i class="fas fa-star"></i> Key Highlights</h2>
             <div class="highlight-grid">
-                <!-- Campus Ambassador Card -->
                 <div class="highlight-card glow-effect">
-                    <div class="highlight-icon">
-                        <i class="fas fa-flag"></i>
-                    </div>
+                    <div class="highlight-icon"><i class="fas fa-flag"></i></div>
                     <h3>Campus Ambassador</h3>
                     <div class="highlight-date">May 2023 – Present</div>
                     <p class="highlight-desc"><strong>Anvesana Innovation & Entrepreneurial Forum</strong> - Represent the forum to promote innovation and entrepreneurship on campus, organize workshops, talks, and networking events with industry leaders, and coordinate student participation in hackathons.</p>
                 </div>
                 
-                <!-- 36 Hour Hackathon Card -->
                 <div class="highlight-card glow-effect">
-                    <div class="highlight-icon">
-                        <i class="fas fa-laptop-code"></i>
-                    </div>
+                    <div class="highlight-icon"><i class="fas fa-laptop-code"></i></div>
                     <h3>36 Hour Hackathon</h3>
                     <div class="highlight-date">July 20-21, 2024</div>
                     <p class="highlight-desc"><strong>Hack for Hire</strong> - conducted by Anvesana Innovation Forum. I was the <strong>main lead volunteer</strong> organizing the entire event, coordinating with 50+ participants, managing logistics, and ensuring smooth execution of the 36-hour coding marathon.</p>
                 </div>
                 
-                <!-- Malnad Startup Summit Card -->
                 <div class="highlight-card glow-effect">
-                    <div class="highlight-icon">
-                        <i class="fas fa-seedling"></i>
-                    </div>
+                    <div class="highlight-icon"><i class="fas fa-seedling"></i></div>
                     <h3>Malnad Startup Summit</h3>
                     <div class="highlight-date">January 18, 2025</div>
                     <span class="minister-tag"><i class="fas fa-star"></i> Hon'ble Minister attended</span>
-                    <p class="highlight-desc" style="margin-top: 0.8rem;">Celebrating the spirit of agriculture with <strong>Hon'ble Shri Shivraj Singh Chauhan</strong>, Agriculture Minister of India as the chief guest. Volunteered and contributed to this prestigious summit focused on agri-tech innovation.</p>
+                    <p class="highlight-desc">Celebrating the spirit of agriculture with <strong>Hon'ble Shri Shivraj Singh Chauhan</strong>, Agriculture Minister of India as the chief guest. Volunteered and contributed to this prestigious summit focused on agri-tech innovation.</p>
                 </div>
                 
-                <!-- Phanindra Sama Event Card -->
                 <div class="highlight-card glow-effect">
-                    <div class="highlight-icon">
-                        <i class="fas fa-microphone-alt"></i>
-                    </div>
+                    <div class="highlight-icon"><i class="fas fa-microphone-alt"></i></div>
                     <h3>Startup Leadership Talk</h3>
                     <div class="highlight-date">March 2024</div>
                     <p class="highlight-desc">Interactive session with <strong>Phanindra Sama</strong>, founder of redBus. Organized and coordinated this inspiring talk where 50+ startups and 300+ students learned about the journey of building India's largest bus ticketing platform.</p>
                 </div>
             </div>
             
-            <!-- Small section for other volunteering events -->
             <div class="more-events">
                 <h4><i class="fas fa-calendar-alt" style="color: #3b82f6; margin-right: 0.5rem;"></i> More volunteering & workshops</h4>
                 <div class="event-chips">
@@ -1300,31 +1303,11 @@
             <div class="contact-double">
                 <div class="contact-info">
                     <h3>Reach Directly</h3>
-                    
-                    <div class="info-item">
-                        <i class="fas fa-envelope fa-fw"></i>
-                        <a href="mailto:rizwann0707@gmail.com">rizwann0707@gmail.com</a>
-                    </div>
-                    
-                    <div class="info-item">
-                        <i class="fas fa-phone-alt fa-fw"></i>
-                        <a href="tel:+918867467848">+91 88674 67848</a>
-                    </div>
-                    
-                    <div class="info-item">
-                        <i class="fab fa-linkedin fa-fw"></i>
-                        <a href="https://linkedin.com/in/mohammed-rizwan-s" target="_blank">Mohammed Rizwan S</a>
-                    </div>
-                    
-                    <div class="info-item">
-                        <i class="fab fa-github fa-fw"></i>
-                        <a href="https://github.com/R1zwan07" target="_blank">R1zwan07</a>
-                    </div>
-                    
-                    <div style="margin-top: 2rem;">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <a href="https://maps.google.com/?q=Ashok+Nagar+Shimoga+Karnataka+India" target="_blank">Ashok Nagar, Shimoga, India</a>
-                    </div>
+                    <div class="info-item"><i class="fas fa-envelope fa-fw"></i><a href="mailto:rizwann0707@gmail.com">rizwann0707@gmail.com</a></div>
+                    <div class="info-item"><i class="fas fa-phone-alt fa-fw"></i><a href="tel:+918867467848">+91 88674 67848</a></div>
+                    <div class="info-item"><i class="fab fa-linkedin fa-fw"></i><a href="https://linkedin.com/in/mohammed-rizwan-s" target="_blank">Mohammed Rizwan S</a></div>
+                    <div class="info-item"><i class="fab fa-github fa-fw"></i><a href="https://github.com/R1zwan07" target="_blank">R1zwan07</a></div>
+                    <div style="margin-top: 2rem;"><i class="fas fa-map-marker-alt"></i><a href="https://maps.google.com/?q=Ashok+Nagar+Shimoga+Karnataka+India" target="_blank"> Ashok Nagar, Shimoga, India</a></div>
                 </div>
                 
                 <div class="contact-form">
@@ -1372,7 +1355,6 @@
             }
         }
 
-        // Animated counter
         function animateCounter() {
             const statNumbers = document.querySelectorAll('.stat-number');
             statNumbers.forEach(el => {
@@ -1403,7 +1385,6 @@
         }, { threshold: 0.5 });
         observer.observe(homeSection);
 
-        // Card hover effects
         const allCards = document.querySelectorAll('.project-card, .exp-card, .highlight-card, .info-card, .skills-card, .softskills-card');
         allCards.forEach(card => {
             card.addEventListener('mouseenter', () => {
@@ -1415,7 +1396,6 @@
             });
         });
 
-        // Update copyright year
         const footer = document.querySelector('footer p');
         footer.innerHTML = `© ${new Date().getFullYear()} Mohammed Rizwan S — built with the best of both worlds`;
     </script>
