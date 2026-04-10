@@ -133,7 +133,7 @@
             margin-bottom: 6rem;
         }
 
-        /* Section headers - matching your style but dark */
+        /* Section headers */
         .section-title {
             font-size: 2.3rem;
             font-weight: 700;
@@ -144,7 +144,7 @@
             color: #ffffff;
         }
 
-        /* HERO section - matching your structure */
+        /* HERO section */
         .hero {
             display: flex;
             flex-wrap: wrap;
@@ -208,7 +208,7 @@
             letter-spacing: 0.5px;
         }
 
-        /* HERO RIGHT - dark profile card */
+        /* HERO RIGHT */
         .hero-right {
             flex: 1 1 280px;
             background: rgba(255, 255, 255, 0.02);
@@ -331,7 +331,7 @@
             transform: scale(1.1);
         }
 
-        /* Bio card - dark */
+        /* Bio card */
         .bio-card {
             background: rgba(255, 255, 255, 0.02);
             border: 1px solid rgba(255, 255, 255, 0.05);
@@ -350,7 +350,7 @@
             color: #3b82f6;
         }
 
-        /* About grid - matching your 3 column structure */
+        /* About grid */
         .about-grid {
             display: flex;
             flex-wrap: wrap;
@@ -1029,7 +1029,7 @@
                     <p class="hero-desc">I'm Mohammed Rizwan S, a Computer Science student passionate about building intelligent systems, analyzing data, and creating robust database architectures that solve real problems.</p>
                     
                     <div class="stats" id="statsSection">
-                        <div class="stat"><h3 class="stat-number" data-target="2">2</h3> <span>projects</span></div>
+                        <div class="stat"><h3 class="stat-number" data-target="5">5</h3> <span>projects</span></div>
                         <div class="stat"><h3 class="stat-number" data-target="10">10</h3> <span>events</span></div>
                     </div>
                 </div>
@@ -1107,50 +1107,117 @@
         </section>
 
         <!-- PROJECTS section -->
-        <section id="projects">
-            <h2 class="section-title"><i class="fas fa-rocket"></i> Projects</h2>
+<section id="projects">
+    <h2 class="section-title"><i class="fas fa-rocket"></i> Projects</h2>
 
-            <div class="project-grid">
-                <!-- AI Learning Platform -->
-                <div class="project-card glow-effect">
-                    <div class="project-head">AI-Based Learning Platform for Rural Education</div>
-                    <div class="project-body">
-                        <div class="project-description">
-                            <p style="text-align: justify;">Designed and developed an <strong>AI-Based Learning Platform for Rural Student Education using Cloud</strong> to improve access to digital education in underserved communities. The platform features multilingual learning support (Kannada and English), video based lessons, interactive quizzes, and AI-driven personalized learning paths that adapt to student performance. An integrated AI-powered chatbot provides real-time doubt resolution, enhancing student engagement and support.</p>
-                        </div>
-                        <div>
-                            <span class="tech-badge">Python</span>
-                            <span class="tech-badge">Flask</span>
-                            <span class="tech-badge">MySQL</span>
-                            <span class="tech-badge">AWS</span>
-                            <span class="tech-badge">AI/ML</span>
-                        </div>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/R1zwan07/AI-Based-Learning-Platform-for-Rural-student-Education-Using-Cloud" class="project-link"><i class="fab fa-github"></i> Code</a>
-                    </div>
+    <!-- First Row: 2 Projects -->
+    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; margin-bottom: 2rem;">
+        <!-- AI Learning Platform -->
+        <div class="project-card glow-effect">
+            <div class="project-head">AI-Based Learning Platform for Rural Education</div>
+            <div class="project-body">
+                <div class="project-description">
+                    <p style="text-align: justify;">Designed and developed an <strong>AI-Based Learning Platform for Rural Student Education using Cloud</strong> to improve access to digital education in underserved communities. The platform features multilingual learning support (Kannada and English), video based lessons, interactive quizzes, and AI-driven personalized learning paths that adapt to student performance. An integrated AI-powered chatbot provides real-time doubt resolution, enhancing student engagement and support.</p>
                 </div>
-
-                <!-- Personal Expense Tracker -->
-                <div class="project-card glow-effect">
-                    <div class="project-head">Personal Expense Tracker</div>
-                    <div class="project-body">
-                        <div class="project-description">
-                            <p style="text-align: justify;">Developed a <strong>Personal Expense Tracker</strong> to help users efficiently manage and monitor their daily financial activities. The application allows users to record income and expenses, categorize transactions, and track spending patterns through an interactive dashboard. It provides visual insights into personal financial habits using charts and summaries, helping users make informed budgeting and spending decisions.</p>
-                        </div>
-                        <div>
-                            <span class="tech-badge">Python</span>
-                            <span class="tech-badge">Streamlit</span>
-                            <span class="tech-badge">HTML</span>
-                            <span class="tech-badge">CSS</span>
-                        </div>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/R1zwan07/expense-tracker-" class="project-link"><i class="fab fa-github"></i> Code</a>
-                    </div>
+                <div>
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">Flask</span>
+                    <span class="tech-badge">MySQL</span>
+                    <span class="tech-badge">AWS</span>
+                    <span class="tech-badge">AI/ML</span>
                 </div>
             </div>
-        </section>
+            <div class="project-links">
+                <a href="https://github.com/R1zwan07/AI-Based-Learning-Platform-for-Rural-student-Education-Using-Cloud" class="project-link"><i class="fab fa-github"></i> Code</a>
+            </div>
+        </div>
+
+        <!-- DocIntel Study Assistant -->
+        <div class="project-card glow-effect">
+            <div class="project-head">DocIntel Study Assistant</div>
+            <div class="project-body">
+                <div class="project-description">
+                    <p style="text-align: justify;">Developed an <strong>AI Document Intelligence System</strong> that transforms PDFs into structured summaries, key points, and diagram extraction using PyMuPDF. Implemented a RAG-based Q&A system using Ollama LLM for contextual answers, and an NLP scoring algorithm to extract 30–40 high-value key points automatically.</p>
+                </div>
+                <div>
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">NLP</span>
+                    <span class="tech-badge">Ollama</span>
+                    <span class="tech-badge">PyMuPDF</span>
+                </div>
+            </div>
+            <div class="project-links">
+                <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Second Row: 2 Projects -->
+    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; margin-bottom: 2rem;">
+        <!-- Digital Child Growth Passport -->
+        <div class="project-card glow-effect">
+            <div class="project-head">Digital Child Growth Passport</div>
+            <div class="project-body">
+                <div class="project-description">
+                    <p style="text-align: justify;">Designed a <strong>digital health platform</strong> for tracking child growth and vaccination records. The system uses data analytics to monitor growth patterns and generate actionable health insights. It features a user-friendly interface for parents and healthcare providers, enabling better health management for children.</p>
+                </div>
+                <div>
+                    <span class="tech-badge">React</span>
+                    <span class="tech-badge">Node.js</span>
+                    <span class="tech-badge">MongoDB</span>
+                    <span class="tech-badge">Data Analytics</span>
+                </div>
+            </div>
+            <div class="project-links">
+                <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
+            </div>
+        </div>
+
+        <!-- AI-Based Smart Traffic Control System -->
+        <div class="project-card glow-effect">
+            <div class="project-head">AI-Based Smart Traffic Control System</div>
+            <div class="project-body">
+                <div class="project-description">
+                    <p style="text-align: justify;">Built a <strong>real-time traffic management system</strong> using YOLOv8 and DeepSORT with emergency vehicle detection. Capable of processing multiple camera feeds (up to 6 streams) with a FastAPI backend achieving 28–35 FPS. Includes automatic signal prioritization and ETA prediction for VVIP and emergency vehicles.</p>
+                </div>
+                <div>
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">YOLOv8</span>
+                    <span class="tech-badge">DeepSORT</span>
+                    <span class="tech-badge">FastAPI</span>
+                    <span class="tech-badge">AI/ML</span>
+                </div>
+            </div>
+            <div class="project-links">
+                <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Third Row: 1 Project Centered -->
+    <div style="display: flex; justify-content: center;">
+        <div style="width: calc(50% - 1rem); min-width: 300px;">
+            <!-- Personal Expense Tracker -->
+            <div class="project-card glow-effect">
+                <div class="project-head">Personal Expense Tracker</div>
+                <div class="project-body">
+                    <div class="project-description">
+                        <p style="text-align: justify;">Developed a <strong>Personal Expense Tracker</strong> to help users efficiently manage and monitor their daily financial activities. The application allows users to record income and expenses, categorize transactions, and track spending patterns through an interactive dashboard. It provides visual insights into personal financial habits using charts and summaries, helping users make informed budgeting and spending decisions.</p>
+                    </div>
+                    <div>
+                        <span class="tech-badge">Python</span>
+                        <span class="tech-badge">Streamlit</span>
+                        <span class="tech-badge">HTML</span>
+                        <span class="tech-badge">CSS</span>
+                    </div>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/R1zwan07/expense-tracker-" class="project-link"><i class="fab fa-github"></i> Code</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
         <!-- EXPERIENCE section -->
         <section id="experience">
@@ -1158,13 +1225,13 @@
             <div class="exp-grid">
                 <div class="exp-card glow-effect">
                     <h3>DS & AI/ML Intern</h3>
-                    <div class="company">Comedkares</div>
-                    <div class="date"><i class="far fa-calendar-alt"></i> Feb 2026 - Present</div>
+                    <div class="company">ERA Foundation (ComedKares Innovation Hub)</div>
+                    <div class="date"><i class="far fa-calendar-alt"></i> Feb 2026 - May 2026</div>
                     <ul>
-                       <li>Developing AI-based solutions and optimizing algorithms</li>
-                        <li>Working on building and optimizing data science pipelines for data preprocessing, feature engineering, and model evaluation.</li>
-                        <li>Developing machine learning models to solve real-world problems using Python and popular ML frameworks.</li>
-                        <li>Collaborating with team members to design AI-driven solutions and improve model performance</li>
+                       <li>Developing AI-based solutions and optimizing algorithms.</li>
+                        <li>Building data science pipelines for preprocessing and model evaluation.</li>
+                        <li>Implementing ML models using Python frameworks.</li>
+                        <li>Built an end-to-end data science pipeline with version control using GitHub.</li>
                     </ul>
                 </div>
             </div>
@@ -1174,7 +1241,7 @@
         <section id="highlights">
             <h2 class="section-title"><i class="fas fa-star"></i> Key Highlights</h2>
             <div class="highlight-grid">
-                <!-- Campus Ambassador Card (Moved from Experience) -->
+                <!-- Campus Ambassador Card -->
                 <div class="highlight-card glow-effect">
                     <div class="highlight-icon">
                         <i class="fas fa-flag"></i>
